@@ -20,7 +20,7 @@ ventana.geometry("500x350")
 ventana.resizable(True,True)
 
 #fondo
-imagen=Image.open("./img/fondo.jpeg")
+imagen=Image.open("fondo.jpeg")
 imagen = imagen.resize((ventana.winfo_screenwidth(), ventana.winfo_screenheight()))
 imagen_de_fondo = ImageTk.PhotoImage(imagen)
 fondo = tk.Label(ventana, image=imagen_de_fondo)
