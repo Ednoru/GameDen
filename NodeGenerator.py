@@ -43,6 +43,5 @@ def buscarRegistro(nombre, n_max):
     nx.draw_networkx_edges(G, pos, width=1, alpha=0.5, edge_color='black')
     nx.draw_networkx_labels(G, pos, font_size=10, font_family='sans-serif')
     plt.axis('off')
-    #mostrar el numero de nodos obtenidos en el grafo y mostrarlos en la esquina superior izquierda debajo del titulo
     plt.text(0.1, 0.9, "Numero de nodos totales: " + str(aux), fontsize=12, transform=plt.gcf().transFigure)
     plt.show()
