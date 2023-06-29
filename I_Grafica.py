@@ -10,6 +10,15 @@ ventana.title("GamerDen")
 ventana.geometry("500x350")
 ventana.resizable(True, True)
 
+#la interfaz debe ser responsiva
+ventana.grid_columnconfigure(0, weight=1)
+ventana.grid_columnconfigure(1, weight=1)
+ventana.grid_rowconfigure(0, weight=1)
+ventana.grid_rowconfigure(1, weight=1)
+ventana.grid_rowconfigure(2, weight=1)
+ventana.grid_rowconfigure(3, weight=1)
+
+
 # fondo
 imagen = Image.open("./GameDen/fondo.jpeg")
 imagen = imagen.resize((ventana.winfo_screenwidth(), ventana.winfo_screenheight()))

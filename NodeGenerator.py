@@ -16,7 +16,8 @@ def buscarRegistro(nombre, n_max):
         filtro = ((data['Genre'] == GYP[0])) & ((data['Platform'] == GYP[1]))
         fil = data[filtro]
         num_registros = fil.shape[0]
-        print(num_registros)        
+        aux = num_registros
+        print(aux)        
         print(fil)
     else:
         print("No se encontró ningún registro con ese nombre.")
@@ -24,7 +25,7 @@ def buscarRegistro(nombre, n_max):
 
     G = nx.Graph()
 
-    #limitar el numero de notos a 100
+    #limitar el numero de nodos
     if num_registros > n_max:
         num_registros = n_max
         fil = fil.head(n_max)
@@ -42,4 +43,6 @@ def buscarRegistro(nombre, n_max):
     nx.draw_networkx_edges(G, pos, width=1, alpha=0.5, edge_color='black')
     nx.draw_networkx_labels(G, pos, font_size=10, font_family='sans-serif')
     plt.axis('off')
+    #mostrar el numero de nodos obtenidos en el grafo y mostrarlos en la esquina superior izquierda debajo del titulo
+    plt.text(0.1, 0.9, "Numero de nodos totales: " + str(aux), fontsize=12, transform=plt.gcf().transFigure)
     plt.show()
