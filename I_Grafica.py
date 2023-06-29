@@ -4,20 +4,20 @@ from tkinter import font
 import tkinter.font as font
 import NodeGenerator as ng
 
-#ventana
-ventana=tk.Tk()
+# ventana
+ventana = tk.Tk()
 ventana.title("GamerDen")
 ventana.geometry("500x350")
-ventana.resizable(True,True)
+ventana.resizable(True, True)
 
-#fondo
-imagen=Image.open("./HITO2/fondo.jpeg")
+# fondo
+imagen = Image.open("fondo.jpeg")
 imagen = imagen.resize((ventana.winfo_screenwidth(), ventana.winfo_screenheight()))
 imagen_de_fondo = ImageTk.PhotoImage(imagen)
 fondo = tk.Label(ventana, image=imagen_de_fondo)
 fondo.place(x=0, y=0, relwidth=1, relheight=1)
 
-#Nombre de la app
+# Nombre de la app
 ruta_fuente = 'angrybirds-regular.ttf'  # Reemplaza con la ruta correcta del archivo de fuente
 fuente_personalizada = font.Font(family='AngryBirds', size=20)
 texto = "GamerDen"
@@ -26,18 +26,22 @@ label_texto.grid(row=0, column=0, padx=0, pady=0, sticky=tk.W)
 fuentes_disponibles = font.families()
 print(fuentes_disponibles)
 
-#Colocar el input en la interfaz
-label = tk.Label(ventana, text="Ingrese el nro de nodos:")
-label.grid(row=1, column=0)
+# Colocar el input en la interfaz
+label_juego = tk.Label(ventana, text="Ingrese el nombre del juego:")
+label_juego.grid(row=1, column=0)
 
-#al ingresar el nro de nodos, se genera el grafo
-entry = tk.Entry(ventana)
-entry.grid(row=1, column=1)
+entry_juego = tk.Entry(ventana)
+entry_juego.grid(row=1, column=1)
 
-#boton para generar el grafo
-boton = tk.Button(ventana, text="Generar grafo", command=lambda: ng.getNode(entry.get()))
-boton.grid(row=2, column=0)
+label_nodos = tk.Label(ventana, text="Ingrese la cantidad de nodos:")
+label_nodos.grid(row=2, column=0)
 
+entry_nodos = tk.Entry(ventana)
+entry_nodos.grid(row=2, column=1)
 
-#Carga la ventana
+# boton para generar el grafo
+boton = tk.Button(ventana, text="Generar grafo", command=lambda: ng.getNode(entry_juego.get(), int(entry_nodos.get())))
+boton.grid(row=3, column=0)
+
+# Carga la ventana
 ventana.mainloop()
