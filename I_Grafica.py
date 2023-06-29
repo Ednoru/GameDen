@@ -33,14 +33,14 @@ label_juego.grid(row=1, column=0, padx=10, pady=10, sticky=tk.W)
 entry_juego = tk.Entry(ventana)
 entry_juego.grid(row=1, column=1, padx=10, pady=10, sticky=tk.W)
 
-label_nodos = tk.Label(ventana, text="Ingrese la cantidad de nodos:")
+label_nodos = tk.Label(ventana, text="Ingrese la cantidad maxima de nodos:")
 label_nodos.grid(row=2, column=0, padx=10, pady=10, sticky=tk.W)
 
 entry_nodos = tk.Entry(ventana)
 entry_nodos.grid(row=2, column=1, padx=10, pady=10, sticky=tk.W)
 
 # boton para generar el grafo
-boton = tk.Button(ventana, text="Generar grafo", command=lambda: ng.getNode(entry_juego.get(), int(entry_nodos.get())))
+boton = tk.Button(ventana, text="Generar grafo", command=lambda: ng.buscarRegistro(entry_juego.get(), int(entry_nodos.get())))
 boton.grid(row=3, column=0, padx=10, pady=10, sticky=tk.W)
 
 # Carga la ventana
